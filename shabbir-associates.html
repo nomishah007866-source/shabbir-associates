@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabbir Associates - Premium Real Estate B-17 Islamabad</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        
+        header {
+            background: linear-gradient(135deg, #1a5f4a 0%, #0d3d2f 100%);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+        header p { font-size: 1rem; opacity: 0.9; }
+        
+        nav {
+            background: #0d3d2f;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: #ffc107; }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1fbf56;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23E8F5E9" width="1200" height="400"/><text x="600" y="200" font-size="48" fill="%231a5f4a" text-anchor="middle" dominant-baseline="middle" font-weight="bold">B-17 Islamabad - Prime Location</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+        
+        .cta-btn {
+            display: inline-block;
+            background: #ffc107;
+            color: #0d3d2f;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .cta-btn:hover { background: #ffb300; transform: scale(1.05); }
+        
+        .about-section {
+            background: #f9f9f9;
+            padding: 3rem 1.5rem;
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text h2 { color: #1a5f4a; margin-bottom: 1rem; font-size: 1.8rem; }
+        .about-text p { color: #666; line-height: 1.6; margin-bottom: 1rem; }
+        .about-text .highlight { color: #0d3d2f; font-weight: 600; }
+        .about-text ul { margin-left: 1.5rem; color: #666; line-height: 1.8; }
+        
+        .ceo-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 1.5rem;
+            border: 2px solid #ffc107;
+        }
+        
+        .ceo-photo {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: #ddd;
+            object-fit: cover;
+        }
+        
+        .ceo-card h3 { color: #1a5f4a; margin-bottom: 0.3rem; font-size: 1.3rem; }
+        .ceo-card .title { color: #ffc107; font-weight: 600; margin-bottom: 0.5rem; }
+        .ceo-card p { color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        
+        .projects {
+            padding: 3rem 1.5rem;
+            background: white;
+        }
+        
+        .projects h2 { text-align: center; color: #1a5f4a; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-item {
+            background: #f9f9f9;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        
+        .project-item:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        
+        .project-item h3 { color: #1a5f4a; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .project-item p { color: #666; font-size: 0.9rem; }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 3rem 1.5rem;
+            background: #f9f9f9;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #ffc107;
+        }
+        
+        .service-card h3 { color: #1a5f4a; margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .service-card p { color: #666; font-size: 0.95rem; }
+        
+        .properties {
+            padding: 3rem 1.5rem;
+        }
+        
+        .properties h2 { text-align: center; color: #1a5f4a; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .property-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        
+        .property-card:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        
+        .property-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a5f4a 0%, #0d3d2f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            object-fit: cover;
+        }
+        
+        .property-info { padding: 1.5rem; }
+        .property-info h3 { color: #1a5f4a; margin-bottom: 0.5rem; }
+        .property-type { color: #ffc107; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; }
+        .property-info p { color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        
+        .contact {
+            background: #1a5f4a;
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        
+        .contact h2 { margin-bottom: 1.5rem; font-size: 1.8rem; }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item { font-size: 1.05rem; }
+        .contact-item strong { color: #ffc107; }
+        
+        .contact-form { max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 1rem; text-align: left; }
+        .form-group label { display: block; margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        .form-group textarea { resize: vertical; }
+        
+        .submit-btn {
+            width: 100%;
+            background: #ffc107;
+            color: #0d3d2f;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .submit-btn:hover { background: #ffb300; }
+        
+        footer {
+            background: #0d3d2f;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .hero h2 { font-size: 1.3rem; }
+            nav { gap: 1rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .whatsapp-btn { width: 50px; height: 50px; font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923700314843?text=Assalamu%20Alaikum!%20I%20am%20interested%20in%20your%20properties.%20Please%20provide%20more%20details." target="_blank" class="whatsapp-float">
+        <div class="whatsapp-btn">
+            💬
+        </div>
+    </a>
+    
+    <header>
+        <h1>🏢 SHABBIR ASSOCIATES</h1>
+        <p>Premium Real Estate Solutions in Islamabad</p>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#properties">Properties</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="hero" id="home">
+        <h2>Welcome to B-17, Islamabad</h2>
+        <p>Discover luxury residential, commercial, and rental properties in one of Islamabad's most prestigious areas</p>
+        <a href="#contact" class="cta-btn">Get in Touch</a>
+    </div>
+    
+    <div class="about-section" id="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a trusted real estate company dealing in premium properties across Islamabad's most sought-after locations.</p>
+                <p><span class="highlight">Our Specialization:</span></p>
+                <ul>
+                    <li>Multi Gardens B-17</li>
+                    <li>Tele Gardens F-17</li>
+                    <li>Multi Orchards</li>
+                    <li>Residencia ROS</li>
+                    <li>Faisal Margalla City</li>
+                    <li>Faisal Hills & Faisal Town</li>
+                    <li>All CDA Sectors</li>
+                </ul>
+                <p style="margin-top: 1rem;"><span class="highlight">Our Mission:</span> To live up to the expectations of our customers by providing premium real estate solutions with integrity and professionalism.</p>
+            </div>
+            
+            <div class="ceo-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect fill='%23E8E8E8' width='400' height='500'/%3E%3Ctext x='200' y='250' font-size='80' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3E👔%3C/text%3E%3C/svg%3E" alt="CEO" class="ceo-photo">
+                <h3>Imtiaz Shah</h3>
+                <div class="title">CEO & Founder</div>
+                <p>Leading Shabbir Associates with expertise and dedication to excellence in real estate</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: #999;">Office #1452, Block C-1, Main Double Road, MPCHS B-17, Islamabad</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="projects" id="projects">
+        <div class="container">
+            <h2>Our Featured Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>🏗️ Multi Gardens B-17</h3>
+                    <p>Premium residential community with modern amenities and secure gated access in the heart of B-17</p>
+                </div>
+                <div class="project-item">
+                    <h3>🌳 Tele Gardens F-17</h3>
+                    <p>Exclusive residential development with prime location and excellent infrastructure near Soan River</p>
+                </div>
+                <div class="project-item">
+                    <h3>🌲 Multi Orchards</h3>
+                    <p>Sophisticated residential project combining luxury and comfort with green spaces</p>
+                </div>
+                <div class="project-item">
+                    <h3>✨ Residencia ROS</h3>
+                    <p>Modern living spaces designed for contemporary lifestyle needs with premium finishes</p>
+                </div>
+                <div class="project-item">
+                    <h3>🏔️ Faisal Margalla City</h3>
+                    <p>Premium development in one of Islamabad's most sought-after areas near Margalla Hills</p>
+                </div>
+                <div class="project-item">
+                    <h3>🌃 Faisal Hills & Faisal Town</h3>
+                    <p>Upscale residential communities with excellent connectivity and amenities for families</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="services" id="services">
+        <div class="service-card">
+            <h3>🏠 Residential</h3>
+            <p>Premium residential properties with modern amenities and prime locations in B-17 and surrounding areas</p>
+        </div>
+        <div class="service-card">
+            <h3>🏢 Commercial</h3>
+            <p>Strategic commercial spaces for offices, retail, and business ventures with high visibility and accessibility</p>
+        </div>
+        <div class="service-card">
+            <h3>🔑 Rental</h3>
+            <p>Flexible rental options for short and long-term needs across all property types</p>
+        </div>
+    </div>
+    
+    <div class="properties" id="properties">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <div class="property-grid">
+                <div class="property-card">
+                    <div class="property-image">🏡</div>
+                    <div class="property-info">
+                        <div class="property-type">RESIDENTIAL</div>
+                        <h3>Luxury Apartment B-17</h3>
+                        <p><strong>Location:</strong> B-17, Sector 5</p>
+                        <p><strong>Size:</strong> 1,200 sq ft</p>
+                        <p><strong>Features:</strong> Modern design, parking, gym, security</p>
+                    </div>
+                </div>
+                
+                <div class="property-card">
+                    <div class="property-image">🏬</div>
+                    <div class="property-info">
+                        <div class="property-type">COMMERCIAL</div>
+                        <h3>Premium Office Space</h3>
+                        <p><strong>Location:</strong> B-17 Main Boulevard</p>
+                        <p><strong>Size:</strong> 2,000 sq ft</p>
+                        <p><strong>Features:</strong> Prime location, high visibility, parking</p>
+                    </div>
+                </div>
+                
+                <div class="property-card">
+                    <div class="property-image">🏘️</div>
+                    <div class="property-info">
+                        <div class="property-type">RESIDENTIAL</div>
+                        <h3>Family House B-17</h3>
+                        <p><strong>Location:</strong> B-17, Sector 3</p>
+                        <p><strong>Size:</strong> 5,000 sq ft</p>
+                        <p><strong>Features:</strong> Garden, multiple rooms, secure gated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us Today</h2>
+            <div class="contact-info">
+                <div class="contact-item"><strong>📱 WhatsApp:</strong> 03700314843</div>
+                <div class="contact-item"><strong>📞 Phone:</strong> 03700314843</div>
+                <div class="contact-item"><strong>📍 Location:</strong> Office #1452, Block C-1, Main Double Road, MPCHS B-17</div>
+                <div class="contact-item"><strong>🏢 City:</strong> Islamabad, Pakistan</div>
+            </div>
+            
+            <div class="contact-form">
+                <form onsubmit="return handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Shabbir Associates Pvt Ltd. All rights reserved.</p>
+        <p>Office #1452, Block C-1, Main Double Road, MPCHS B-17, Islamabad, Pakistan</p>
+    </footer>
+    
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent. We will contact you soon!');
+            e.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>
